@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <main>
-      <div>Hello world!</div>
-    </main>
-  );
+import { Deck } from "@/components/deck";
+
+export default function Page() {
+  return <Deck />;
 }
