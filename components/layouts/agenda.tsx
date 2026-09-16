@@ -27,10 +27,10 @@ export function AgendaSlide({
         )}
       >
         {items.map((item, i) => (
-          <li key={item} className="grid grid-cols-[2.25rem_1fr] items-baseline">
+          <li key={item} className="grid grid-cols-[2.5rem_1fr] items-baseline">
             <span
               aria-hidden
-              className="font-display text-body-m font-semibold tabular-nums text-sodium"
+              className="font-display text-body-l font-semibold tabular-nums text-sodium"
             >
               {i + 1}
             </span>

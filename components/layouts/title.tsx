@@ -17,7 +17,7 @@ export function TitleSlide({
           <li
             key={line}
             className={
-              i === 0 ? "font-display font-medium text-chalk" : "text-smoke"
+              i === 0 ? "font-display font-medium text-sodium" : "text-smoke"
             }
           >
             {line}

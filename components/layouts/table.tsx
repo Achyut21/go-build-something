@@ -53,7 +53,7 @@ export function TableSlide({
               >
                 <th
                   scope="row"
-                  className="py-3.5 pl-gutter pr-5 align-top font-display text-body-m font-semibold"
+                  className="py-3.5 pl-gutter pr-5 align-top font-display text-body-m font-semibold text-sodium"
                 >
                   {domain}
                 </th>
@@ -70,7 +70,7 @@ export function TableSlide({
       <ul className="mt-7 md:hidden">
         {rows.map(([domain, fast, trap]) => (
           <li key={domain} className="border-t border-chalk/12 py-4">
-            <p className="font-display text-body-l font-semibold">{domain}</p>
+            <p className="font-display text-body-l font-semibold text-sodium">{domain}</p>
             <dl className="mt-2 flex flex-col gap-1.5">
               <div className="grid grid-cols-[6.25rem_1fr] gap-x-3">
                 <dt className="text-body-m text-smoke">{columns[1]}</dt>

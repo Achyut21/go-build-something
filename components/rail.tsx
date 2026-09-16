@@ -65,14 +65,11 @@ export function Rail({
       )}
     >
       <div className="flex items-center justify-end px-gutter pb-3.5">
-        <span
-          aria-hidden
-          className={cn(
-            "font-display text-micro tabular-nums",
-            flood ? "text-ink/55" : "text-smoke/70",
-          )}
-        >
-          {index + 1}/{total}
+        <span aria-hidden className="font-display text-micro tabular-nums">
+          <span className={flood ? "text-ink" : "text-sodium"}>{index + 1}</span>
+          <span className={flood ? "text-ink/45" : "text-smoke/60"}>
+            /{total}
+          </span>
         </span>
         <div
           data-awake={awake}

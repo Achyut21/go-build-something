@@ -98,13 +98,5 @@ export function Marker({ kind = "bullet" }: { kind?: "bullet" | "do" | "dont" })
     );
   }
 
-  return (
-    <span
-      aria-hidden
-      className={cn(
-        "mt-[0.62em] block size-[0.36em]",
-        kind === "do" ? "bg-sodium" : "bg-ultra/80",
-      )}
-    />
-  );
+  return <span aria-hidden className="mt-[0.62em] block size-[0.36em] bg-sodium" />;
 }

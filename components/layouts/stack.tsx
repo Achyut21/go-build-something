@@ -9,7 +9,7 @@ export function StackSlide({
 }) {
   return (
     <Frame anchor="center">
-      <Heading size="m" className="text-smoke">
+      <Heading size="m" className="text-sodium">
         {heading}
       </Heading>
       <ul className="mt-7 border-t border-chalk/12">

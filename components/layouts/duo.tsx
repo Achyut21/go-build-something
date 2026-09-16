@@ -32,11 +32,11 @@ export function DuoSlide({
           >
             <span
               aria-hidden
-              className="font-display text-body-m font-semibold tabular-nums text-sodium"
+              className="font-display text-display-m font-semibold tabular-nums text-sodium"
             >
               {i + 1}
             </span>
-            <h2 className="mt-1.5 font-display text-display-m font-semibold text-balance">
+            <h2 className="mt-1 font-display text-display-m font-semibold text-balance">
               {panel.title}
             </h2>
             <p className="mt-3 max-w-[34ch] text-body-l text-pretty text-smoke">
