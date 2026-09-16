@@ -119,7 +119,10 @@ export function Deck() {
     origin.current = null;
 
     if (!start || event.button !== 0) return;
-    if (event.target instanceof Element && event.target.closest("[data-chrome]")) {
+    if (
+      event.target instanceof Element &&
+      event.target.closest("a[href], [data-chrome]")
+    ) {
       return;
     }
     if (window.getSelection()?.toString()) return;

@@ -1,10 +1,16 @@
-# Acing your first hackathon
+# Acing your first hackathon: advice I'd give my younger self
 
-The slide deck for a 45-minute talk, built as a website instead of a slide file. One slide fills the viewport, the keyboard drives it, and every slide has its own URL.
+A 45-minute talk for first-year students on the night of their first hackathon, built as a website instead of a slide file. One slide fills the viewport, the keyboard drives it, and every slide has its own URL, so you can link someone straight to slide 17.
 
 Next.js (App Router) + TypeScript + Tailwind, with three shadcn/ui primitives (dialog, button, progress). No database, no API routes, no auth. `next build` emits a fully static site.
 
 ## Run it
+
+Needs Node 20+ and pnpm.
+
+```bash
+git clone https://github.com/Achyut21/go-build-something.git
+```
 
 ```bash
 pnpm install
@@ -35,7 +41,7 @@ Each entry has a `type` that picks its layout. The discriminated union in `conte
 | `type` | What it renders | Fields |
 | --- | --- | --- |
 | `title` | Opening slide, headline on a bottom baseline | `title`, `credentials[]` |
-| `stack` | Short lines set large, hairline-parted, recessed heading | `heading`, `items[{ text, sub? }]` |
+| `stack` | Short lines set large, parted by hairlines | `heading`, `items[{ text, sub? }]` |
 | `agenda` | Numbered sequence, two columns past four items | `heading`, `items[]`, `intro?`, `note?` |
 | `bullets` | Marked list; `frame` picks the composition | `heading`, `frame`, `items[]`, `intro?`, `note?` |
 | `prose` | Paragraphs with an optional row of chips | `heading`, `paragraphs[]`, `tokensLabel?`, `tokens?` |
@@ -72,6 +78,8 @@ so the depth survives without the movement.
 
 The palette and the type scale are Tailwind theme tokens in `app/globals.css`, under `@theme`. Change a hex there and it moves everywhere. The two typefaces load in `app/layout.tsx`.
 
+Amber (`sodium`) is the accent and every slide gets exactly one amber element. Violet (`ultra`) is structural only: the progress rail, focus rings, the Don't column and the table's trap rule.
+
 ## Keyboard
 
 | Key | Does |
@@ -93,9 +101,14 @@ The current slide is written to the URL as `?s=12`, so reloading mid-talk lands 
 
 ## Deploy to Vercel
 
-1. Push the repo to GitHub.
-2. In Vercel, **Add New → Project**, then import the repo.
-3. Leave every build setting alone. Vercel detects Next.js; the framework preset, `pnpm install`, and `pnpm build` are all correct as-is, and there are no environment variables to add.
-4. Deploy. Pushes to the default branch redeploy; pushes to any other branch get a preview URL.
+1. In Vercel, **Add New → Project**, then import this repo.
+2. Leave every build setting alone. Vercel detects Next.js; the framework preset, `pnpm install`, and `pnpm build` are all correct as-is, and there are no environment variables to add.
+3. Deploy. Pushes to `main` redeploy; pushes to any other branch get a preview URL.
 
 `output: "export"` in `next.config.ts` makes the build fully static, so nothing runs on a server at request time.
+
+## Licence
+
+The code is MIT, in [LICENSE](LICENSE). Fork it, strip `content/slides.ts`, put your own talk in it.
+
+The talk content in `content/slides.ts` is CC BY 4.0, in [LICENSE-CONTENT](LICENSE-CONTENT). Reuse or adapt the writing as long as you credit [Achyut Katiyar](https://www.achyutkatiyar.com/).

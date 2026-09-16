@@ -20,6 +20,7 @@ const newsreader = Newsreader({
 export const metadata: Metadata = {
   title: "Acing your first hackathon: advice I'd give my younger self",
   description: "You cannot lose this. Go build something.",
+  authors: [{ name: "Achyut Katiyar", url: "https://www.achyutkatiyar.com/" }],
   openGraph: {
     title: "Acing your first hackathon: advice I'd give my younger self",
     description: "You cannot lose this. Go build something.",

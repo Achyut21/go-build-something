@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import type { SlideLink } from "@/content/slides";
 import { cn } from "@/lib/utils";
 import { RichText } from "@/components/rich-text";
 
@@ -27,7 +28,7 @@ export function Frame({
       className={cn(
         "absolute inset-0 flex flex-col overflow-y-auto overscroll-contain px-gutter pt-gutter-y pb-[calc(var(--spacing-gutter-y)+1.5rem)]",
         flood
-          ? "bg-sodium text-ink [--em-color:var(--color-ink)]"
+          ? "bg-sodium text-ink [--em-color:var(--color-ink)] [--focus:var(--color-ink)]"
           : "text-chalk [--em-color:var(--color-sodium)]",
         className,
       )}
@@ -80,6 +81,36 @@ export function Note({
         <RichText>{children}</RichText>
       </p>
     </div>
+  );
+}
+
+export function LinkRow({
+  links,
+  flood = false,
+}: {
+  links: SlideLink[];
+  flood?: boolean;
+}) {
+  return (
+    <ul className="flex flex-wrap gap-x-7 gap-y-1.5 font-display text-body-m">
+      {links.map((link) => (
+        <li key={link.href}>
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              "underline decoration-1 underline-offset-4 transition-colors",
+              flood
+                ? "text-ink/65 decoration-ink/30 hover:text-ink hover:decoration-ink/70"
+                : "text-smoke decoration-smoke/40 hover:text-chalk hover:decoration-chalk/60",
+            )}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
   );
 }
 

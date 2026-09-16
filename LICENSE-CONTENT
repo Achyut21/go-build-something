@@ -1,0 +1,17 @@
+Talk content licence
+
+The talk content in this repository — the writing in content/slides.ts, which
+is the text shown on the slides — is licensed under the Creative Commons
+Attribution 4.0 International licence (CC BY 4.0).
+
+You are free to share and adapt it, for any purpose, provided you give
+appropriate credit to Achyut Katiyar (https://www.achyutkatiyar.com/), link to
+the licence, and indicate if you made changes.
+
+Licence deed:    https://creativecommons.org/licenses/by/4.0/
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Everything else in this repository — the application code — is covered by the
+MIT licence in LICENSE.
+
+Copyright (c) 2026 Achyut Katiyar

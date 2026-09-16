@@ -8,11 +8,14 @@
 
 export type BulletFrame = "stacked" | "split";
 
+export type SlideLink = { label: string; href: string };
+
 export type Slide =
   | {
       type: "title";
       title: string;
       credentials: string[];
+      links?: SlideLink[];
     }
   | {
       type: "stack";
@@ -70,6 +73,7 @@ export type Slide =
       type: "closing";
       line: string;
       prompt: string;
+      links?: SlideLink[];
     };
 
 export const slides: Slide[] = [
@@ -77,9 +81,16 @@ export const slides: Slide[] = [
     type: "title",
     title: "Acing your first hackathon: advice I'd give my younger self",
     credentials: [
-      "Achyut",
+      "Achyut Katiyar",
       "MSCS, Northeastern",
       "Co-Chair of Hackathon, MIT Bitcoin Expo 2026",
+    ],
+    links: [
+      { label: "achyutkatiyar.com", href: "https://www.achyutkatiyar.com/" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/achyutkatiyar2103/",
+      },
     ],
   },
   {
@@ -452,5 +463,12 @@ export const slides: Slide[] = [
     type: "closing",
     line: "You cannot lose this. Go build something.",
     prompt: "Questions?",
+    links: [
+      { label: "achyutkatiyar.com", href: "https://www.achyutkatiyar.com/" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/achyutkatiyar2103/",
+      },
+    ],
   },
 ];

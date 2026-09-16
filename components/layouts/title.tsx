@@ -1,11 +1,14 @@
-import { Frame } from "@/components/frame";
+import type { SlideLink } from "@/content/slides";
+import { Frame, LinkRow } from "@/components/frame";
 
 export function TitleSlide({
   title,
   credentials,
+  links,
 }: {
   title: string;
   credentials: string[];
+  links?: SlideLink[];
 }) {
   return (
     <Frame anchor="bottom">
@@ -24,6 +27,11 @@ export function TitleSlide({
           </li>
         ))}
       </ul>
+      {links?.length ? (
+        <div className="mt-4">
+          <LinkRow links={links} />
+        </div>
+      ) : null}
     </Frame>
   );
 }
