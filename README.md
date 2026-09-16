@@ -51,6 +51,23 @@ Each entry has a `type` that picks its layout. The discriminated union in `conte
 
 Wrap a phrase in `**double asterisks**` in any string and it renders emphasised — amber on the dark slides, solid ink on the two amber ones.
 
+### The background
+
+Behind the dark slides sit a fixed diagonal wash, two very soft light sources
+that drift on 78s and 104s loops, and a faint grain texture. It is all in
+`components/backdrop.tsx` and the `.wash` / `.lamp` / `.grain` rules at the
+bottom of `app/globals.css`. The two amber slides paint over it, so it never
+shows there.
+
+The drift is transform-only, so it composites on the GPU and costs nothing on
+the main thread. It does still give a video encoder something to chew on, so
+if a screenshare ever looks soft, press `B` to flatten it for the rest of the
+talk. To remove it for good, delete the `<Backdrop />` line from
+`components/deck.tsx`; the deck falls back to flat ink.
+
+The drift freezes under `prefers-reduced-motion`, but the wash and grain stay,
+so the depth survives without the movement.
+
 ### Colours and type
 
 The palette and the type scale are Tailwind theme tokens in `app/globals.css`, under `@theme`. Change a hex there and it moves everywhere. The two typefaces load in `app/layout.tsx`.
@@ -64,6 +81,7 @@ The palette and the type scale are Tailwind theme tokens in `app/globals.css`, u
 | `Home` `End` | First or last slide |
 | `O` | Overview grid of all 29 slides, click one to jump |
 | `F` | Fullscreen |
+| `B` | Background glow on/off |
 | `?` | Shortcut list |
 | `Esc` | Close the overview or the shortcut list |
 

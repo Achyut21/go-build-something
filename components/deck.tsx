@@ -9,6 +9,7 @@ import {
 } from "react";
 
 import { slides } from "@/content/slides";
+import { Backdrop } from "@/components/backdrop";
 import { Overview } from "@/components/overview";
 import { Rail } from "@/components/rail";
 import { Shortcuts } from "@/components/shortcuts";
@@ -38,6 +39,7 @@ type Panel = "overview" | "shortcuts" | null;
 export function Deck() {
   const index = useSyncExternalStore(subscribeIndex, readIndex, firstIndex);
   const [panel, setPanel] = useState<Panel>(null);
+  const [backdrop, setBackdrop] = useState(true);
   const stage = useRef<HTMLDivElement>(null);
   const origin = useRef<{ x: number; y: number } | null>(null);
 
@@ -65,6 +67,11 @@ export function Deck() {
         case "F":
           event.preventDefault();
           toggleFullscreen();
+          return;
+        case "b":
+        case "B":
+          event.preventDefault();
+          setBackdrop((on) => !on);
           return;
       }
 
@@ -143,10 +150,12 @@ export function Deck() {
       onPointerDown={onPointerDown}
       onPointerUp={onPointerUp}
     >
+      <Backdrop hidden={!backdrop} />
+
       <div
         ref={stage}
         data-stage
-        className="fade absolute inset-0 opacity-0"
+        className="fade absolute inset-0 z-10 opacity-0"
       >
         <div key={index} className="slide-enter absolute inset-0">
           <Slide slide={slide} />

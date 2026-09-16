@@ -14,6 +14,7 @@ const shortcuts: { action: string; keys: string[] }[] = [
   { action: "First or last slide", keys: ["Home", "End"] },
   { action: "Every slide at once", keys: ["O"] },
   { action: "Fullscreen", keys: ["F"] },
+  { action: "Background glow", keys: ["B"] },
   { action: "This list", keys: ["?"] },
   { action: "Close", keys: ["Esc"] },
 ];

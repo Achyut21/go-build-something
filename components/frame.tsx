@@ -28,7 +28,7 @@ export function Frame({
         "absolute inset-0 flex flex-col overflow-y-auto overscroll-contain px-gutter pt-gutter-y pb-[calc(var(--spacing-gutter-y)+1.5rem)]",
         flood
           ? "bg-sodium text-ink [--em-color:var(--color-ink)]"
-          : "bg-ink text-chalk [--em-color:var(--color-sodium)]",
+          : "text-chalk [--em-color:var(--color-sodium)]",
         className,
       )}
     >
