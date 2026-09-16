@@ -10,9 +10,7 @@ export function DoDontSlide({
 }) {
   return (
     <Frame anchor="center">
-      <Heading size="m" className="text-smoke">
-        {heading}
-      </Heading>
+      <Heading>{heading}</Heading>
       <div className="mt-8 grid gap-8 md:grid-cols-2 md:gap-0">
         {columns.map((column, i) => (
           <section

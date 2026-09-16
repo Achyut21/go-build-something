@@ -41,19 +41,16 @@ export function Frame({
 }
 
 export function Heading({
-  size = "l",
   className,
   children,
 }: {
-  size?: "m" | "l";
   className?: string;
   children: string;
 }) {
   return (
     <h1
       className={cn(
-        "font-display font-semibold text-balance",
-        size === "l" ? "max-w-[26ch] text-display-l" : "max-w-[34ch] text-display-m",
+        "max-w-[26ch] font-display text-display-l font-semibold text-balance",
         className,
       )}
     >

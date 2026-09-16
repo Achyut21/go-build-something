@@ -16,7 +16,7 @@ export function TableSlide({
 }) {
   return (
     <Frame anchor="center">
-      <Heading size="m">{heading}</Heading>
+      <Heading>{heading}</Heading>
 
       <div className="-mx-gutter mt-8 hidden md:block">
         <table className="w-full border-collapse text-left">

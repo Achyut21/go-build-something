@@ -9,9 +9,7 @@ export function StackSlide({
 }) {
   return (
     <Frame anchor="center">
-      <Heading size="m" className="text-sodium">
-        {heading}
-      </Heading>
+      <Heading className="text-sodium">{heading}</Heading>
       <ul className="mt-7 border-t border-chalk/12">
         {items.map((item) => (
           <li key={item.text} className="border-b border-chalk/12 py-4 sm:py-5">
