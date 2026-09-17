@@ -45,8 +45,8 @@ Each entry has a `type` that picks its layout. The discriminated union in `conte
 | `agenda` | Numbered sequence, two columns past four items | `heading`, `items[]`, `intro?`, `note?` |
 | `bullets` | Marked list; `frame` picks the composition | `heading`, `frame`, `items[]`, `intro?`, `note?` |
 | `prose` | Paragraphs with an optional row of chips | `heading`, `paragraphs[]`, `tokensLabel?`, `tokens?` |
-| `quote` | Full-bleed amber, one big line | `heading`, `quote`, `notes[]` |
-| `table` | Three-column table, stacks into blocks on phones | `heading`, `columns[3]`, `rows[][3]`, `note?` |
+| `quote` | Full-bleed amber, one big line plus an optional worked example | `heading`, `quote`, `notes[]`, `example?` |
+| `table` | Three-column table above 1024px, stacked blocks below | `heading`, `columns[3]`, `rows[][3]`, `note?` |
 | `duo` | Two numbered panels side by side | `heading`, `panels[{ title, body }]`, `intro?`, `note?` |
 | `doDont` | Two marked columns | `heading`, `columns[{ label, mark, items[] }]` |
 | `closing` | Full-bleed amber, closing line plus a prompt | `line`, `prompt` |
@@ -55,7 +55,7 @@ Each entry has a `type` that picks its layout. The discriminated union in `conte
 
 ### Emphasis
 
-Wrap a phrase in `**double asterisks**` in any string and it renders emphasised — amber on the dark slides, solid ink on the two amber ones.
+Wrap a phrase in `**double asterisks**` in any string and it renders emphasised: amber on the dark slides, solid ink on the two amber ones.
 
 ### The background
 

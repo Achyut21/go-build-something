@@ -48,6 +48,7 @@ export type Slide =
       type: "quote";
       heading: string;
       quote: string;
+      example?: { label: string; text: string };
       notes: string[];
     }
   | {
@@ -97,7 +98,7 @@ export const slides: Slide[] = [
     type: "stack",
     heading: "I started exactly where you are",
     items: [
-      { text: "Same campus, same kind of club hackathon" },
+      { text: "Same place where I did my first hackathon" },
       { text: "First one I ever entered" },
       { text: "First place" },
     ],
@@ -116,7 +117,7 @@ export const slides: Slide[] = [
     heading: "What we'll cover",
     items: [
       "What a hackathon actually is",
-      "How tonight will unfold",
+      "How a hackathon actually unfolds",
       "Picking an idea you can finish",
       "Building it",
       "What I look for as a judge",
@@ -139,7 +140,7 @@ export const slides: Slide[] = [
     items: [
       {
         text: "\"I need to be good at coding first\"",
-        sub: "no. You need to be willing to be bad in public for 12 hours",
+        sub: "no. You get good by building, and there is no faster way to build than this",
       },
       {
         text: "\"Everyone else is ahead of me\"",
@@ -172,14 +173,14 @@ export const slides: Slide[] = [
     frame: "stacked",
     items: [
       "A portfolio of things you actually built, not coursework",
-      "You get fast at setup, scoping, and demoing — skills that compound",
+      "You get fast at setup, scoping, and demoing, and those skills compound",
       "The network is the real prize: teammates, organizers, judges, sponsors",
       "Recruiters read \"built and shipped in 12 hours\" as evidence, not a claim",
     ],
   },
   {
     type: "agenda",
-    heading: "How tonight will actually unfold",
+    heading: "How a hackathon actually unfolds",
     intro: "Five phases:",
     items: [
       "Team and idea",
@@ -217,7 +218,7 @@ export const slides: Slide[] = [
     heading: "Pick your domain before you sit down",
     paragraphs: [
       "General advice: research the hackathon. Look at what won last year and why it stood out.",
-      "**Tonight:** there's no archive to study. So do the smaller version — pick your domain now, before 5 PM, not at 5:30.",
+      "**Tonight:** there's no archive to study, so do the smaller version. Pick your domain before you sit down, so your first hour goes into building instead of debating.",
     ],
     tokensLabel: "Domains",
     tokens: [
@@ -235,6 +236,10 @@ export const slides: Slide[] = [
     heading: "Say your project in one sentence",
     quote:
       "\"This is a **[domain]** project that does **[one specific thing]** for **[someone]**.\"",
+    example: {
+      label: "Example",
+      text: "\"This is a GenAI project that turns a lecture recording into searchable notes for students who missed the class.\"",
+    },
     notes: [
       "If you can't say it cleanly, you don't have an idea yet, you have a mood.",
       "Write it down. It's also your demo's opening line.",
@@ -246,7 +251,7 @@ export const slides: Slide[] = [
     frame: "split",
     items: [
       "Judges score you against the domain you entered",
-      "Bolting AI onto a blockchain project dilutes both, and wins neither",
+      "Bolting AI onto a blockchain project dilutes both, and may win neither",
       "Every feature outside your track costs you twice: time, and focus",
       "One domain, done properly, beats two done halfway",
     ],
@@ -270,7 +275,7 @@ export const slides: Slide[] = [
       "Every extra feature steals time from polish on the thing that matters",
       "Judges see about three minutes. They cannot see ten features",
       "A finished small project reads as competent. A broad broken one reads as unfinished",
-      "Write your cut list at the start, not at 4 AM",
+      "Write your cut list before you start building, and keep it where the team can see it",
     ],
   },
   {
@@ -278,6 +283,16 @@ export const slides: Slide[] = [
     heading: "A starting stack for each domain",
     columns: ["Domain", "Fast path", "The trap"],
     rows: [
+      [
+        "Web app (any domain)",
+        "Next.js + Tailwind + shadcn/ui",
+        "Hand-rolling components you could pull in",
+      ],
+      [
+        "Mobile app (iOS + Android)",
+        "React Native with Expo, or Flutter",
+        "Building two native apps separately",
+      ],
       ["GenAI", "Streamlit or Next.js + an LLM API", "Fine-tuning a model"],
       [
         "ML",
@@ -319,19 +334,19 @@ export const slides: Slide[] = [
     items: [
       "Push a hello-world and deploy it before you build anything",
       "Vercel, Render, Streamlit Cloud, whatever fits",
-      "Deployment breaks. Find out at 7 PM, not 5 AM",
+      "Deployment breaks. Find out as early as possible",
       "Embedded and DevOps: same idea, get your device flashing or your pipeline green early",
     ],
   },
   {
     type: "bullets",
-    heading: "Commit every 30 to 45 minutes. I read your history",
+    heading: "Commit after every real piece of work. I read your history",
     frame: "split",
     items: [
       "Set up git in the first thirty minutes, one repo, everyone pushing",
-      "Small commits, all night",
+      "Commit when something lands: repo set up, a function working, a feature done",
       "As a judge, I open your commit history",
-      "One giant commit at 5 AM looks exactly like a copied project",
+      "One giant commit at the end looks exactly like a copied project",
     ],
   },
   {
@@ -343,7 +358,7 @@ export const slides: Slide[] = [
       "Cover three things: what it does, how to run it, and what it's built with",
       "One short paragraph, then setup steps. Not a product brochure",
       "Don't list what's unfinished. Only flag something if it's visible in the project and doesn't work",
-      "AI bloats READMEs by default — badges, emoji headers, a roadmap nobody asked for",
+      "AI bloats READMEs by default: badges, emoji headers, a roadmap nobody asked for",
       "Prompt it properly: \"short README, three sections, no marketing language, no badges,\" then cut it yourself",
     ],
   },
@@ -372,7 +387,7 @@ export const slides: Slide[] = [
         body: "a real problem, a clear business idea, and UI/UX that sells it",
       },
     ],
-    note: "Most winners are clearly one or the other, not a blur of both.",
+    note: "Some projects manage both, and those are the strongest in the room. Either one on its own is enough to win.",
   },
   {
     type: "bullets",
@@ -388,14 +403,14 @@ export const slides: Slide[] = [
   },
   {
     type: "bullets",
-    heading: "The 6 AM demo",
+    heading: "The demo",
     frame: "stacked",
     items: [
       "You get a few minutes. Most of the score is set in the first thirty seconds",
       "**Never live-code.** Record a video of the working flow the moment it works",
       "Structure: the problem in one sentence → show it working → one line on what's next",
       "Don't apologize, don't tour your code, don't list what you didn't finish",
-      "Decide who speaks before 5 AM. Rehearse twice, out loud, on the clock",
+      "Decide who speaks well before you present. Rehearse twice, out loud, on the clock",
     ],
   },
   {
@@ -403,7 +418,7 @@ export const slides: Slide[] = [
     heading: "Be ready to submit an hour before the deadline",
     frame: "split",
     items: [
-      "Ready to submit at 5 AM, not 6",
+      "Be submission ready well before the deadline, not at it",
       "Some organizers give 10 to 15 minutes of grace. Never plan around it",
       "People have come to me after the deadline with a finished project and a sad face. There is nothing I can do",
       "A rough project that was submitted beats a polished one the judges never see",
@@ -443,7 +458,7 @@ export const slides: Slide[] = [
           "Add features outside your track",
           "Live-code the demo",
           "Ship code nobody on the team understands",
-          "Wait until 6 AM to submit",
+          "Leave submitting until the deadline",
         ],
       },
     ],
