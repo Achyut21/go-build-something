@@ -207,7 +207,7 @@ export const slides: Slide[] = [
     heading: "Use the mentors. Almost nobody will",
     frame: "split",
     items: [
-      "Mentors are here all night, for free, and they're mostly idle",
+      "Mentors will be present, for free, and they're mostly idle",
       "Talk to one in your first hour: sanity-check your idea and scope",
       "Talk to one when you're stuck, before you burn two hours",
       "Asking for help is never a weakness. It is just the fastest way forward",
